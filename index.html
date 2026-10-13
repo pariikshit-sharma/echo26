@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>ECHO’26 | Registration</title>
+  <style>
+    :root{--ink:#101010;--yellow:#ffd400;--paper:#f7f6f2;--line:#e7e3d8}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100svh;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center}
+    main{width:min(100%,520px);padding:28px 22px 24px;display:flex;flex-direction:column;min-height:100svh}
+    .brand{display:flex;justify-content:center;align-items:center;padding:6px 0 30px}
+    .brand img{width:min(78%,310px);height:auto;max-height:290px;object-fit:contain;mix-blend-mode:multiply}
+    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#777;margin:0 0 15px 2px}
+    .choices{display:grid;gap:12px}
+    .choice{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;padding:20px 19px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+    .choice:hover,.choice:focus-visible{outline:none;transform:translateY(-2px);border-color:var(--ink);background:#fffdf2}
+    .choice span:first-child{font-size:17px;font-weight:650;letter-spacing:-.025em}
+    .arrow{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-size:21px;flex:0 0 auto}
+    footer{margin-top:auto;padding-top:40px;text-align:center;min-height:72px}
+    .social{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 22px;padding:12px 18px;border-radius:999px;background:var(--yellow);color:var(--ink);font-weight:700;text-decoration:none}
+    .contacts{border-top:1px solid var(--line);padding-top:18px;margin-top:4px}
+    .contact-title{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#777;margin:0 0 12px}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:14px}
+    .contact:last-child{border-bottom:0}
+    .contact strong{font-size:14px}
+    .contact span:last-child{font-weight:650;white-space:nowrap}
+    @media(min-width:480px){main{padding-top:36px}.brand{padding-bottom:36px}.choice{min-height:82px}}
+    @media(prefers-reduced-motion:reduce){.choice{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="brand">
+      <img src="assets/echo26-logo.png" alt="ECHO’26 logo">
+    </header>
+    <p class="eyebrow">Registration</p>
+    <nav class="choices" aria-label="Registration options">
+      <a class="choice" href="https://forms.gle/ADTbMmdHBXdkSpMx5" target="_blank" rel="noopener noreferrer">
+        <span>✨ Talent Hunt</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="choice" href="https://docs.google.com/forms/d/e/1FAIpQLSfaMkYVTY55KrK5Eb9RZBMf_6GM-ahRuDIv7FAW858ssdZ7gQ/viewform" target="_blank" rel="noopener noreferrer">
+        <span>✨ Art Exhibition</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="choice" href="https://docs.google.com/forms/d/e/1FAIpQLSftqwMldS4hRZH1ecCEOeud2d3DbgO_2q--7MThmqliK1z2_A/viewform" target="_blank" rel="noopener noreferrer">
+        <span>✨ Stall Registration</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+    <footer>
+      <a class="social" href="https://instagram.com/_echo_2026" target="_blank" rel="noopener noreferrer" aria-label="Follow ECHO 2026 on Instagram">◎ Follow @_echo_2026</a>
+      <section class="contacts" aria-label="Contact details">
+        <p class="contact-title">For enquiries, contact</p>
+        <a class="contact" href="tel:+918287682995"><strong>Sakshi Bazzad</strong><span>+91 82876 82995</span></a>
+        <a class="contact" href="tel:+916239547384"><strong>Tanya Narula</strong><span>+91 62395 47384</span></a>
+      </section>
+    </footer>
+  </main>
+</body>
+</html>
