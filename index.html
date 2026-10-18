@@ -3,58 +3,1247 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f2">
-  <title>ECHO’26 | Registration</title>
+  <meta name="theme-color" content="#F5C518">
+  <title>ECHO'26 — International Artist Day | Sushant University</title>
+  <meta name="description" content="ECHO'26 celebrates International Artist Day on 23rd October 2026 at Sushant University, Gurugram. National-level art exhibition, artist talks, book launches, panel discussions & more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#101010;--yellow:#ffd400;--paper:#f7f6f2;--line:#e7e3d8}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100svh;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center}
-    main{width:min(100%,520px);padding:28px 22px 24px;display:flex;flex-direction:column;min-height:100svh}
-    .brand{display:flex;justify-content:center;align-items:center;padding:6px 0 30px}
-    .brand img{width:min(78%,310px);height:auto;max-height:290px;object-fit:contain;mix-blend-mode:multiply}
-    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#777;margin:0 0 15px 2px}
-    .choices{display:grid;gap:12px}
-    .choice{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;padding:20px 19px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
-    .choice:hover,.choice:focus-visible{outline:none;transform:translateY(-2px);border-color:var(--ink);background:#fffdf2}
-    .choice span:first-child{font-size:17px;font-weight:650;letter-spacing:-.025em}
-    .arrow{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-size:21px;flex:0 0 auto}
-    footer{margin-top:auto;padding-top:40px;text-align:center;min-height:72px}
-    .social{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 22px;padding:12px 18px;border-radius:999px;background:var(--yellow);color:var(--ink);font-weight:700;text-decoration:none}
-    .contacts{border-top:1px solid var(--line);padding-top:18px;margin-top:4px}
-    .contact-title{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#777;margin:0 0 12px}
-    .contact{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:14px}
-    .contact:last-child{border-bottom:0}
-    .contact strong{font-size:14px}
-    .contact span:last-child{font-weight:650;white-space:nowrap}
-    @media(min-width:480px){main{padding-top:36px}.brand{padding-bottom:36px}.choice{min-height:82px}}
-    @media(prefers-reduced-motion:reduce){.choice{transition:none}}
+    /* ── RESET & VARIABLES ── */
+    :root {
+      --yellow: #F5C518;
+      --yellow-dark: #E0B000;
+      --black: #1a1a1a;
+      --white: #ffffff;
+      --off-white: #faf9f5;
+      --grey-light: #f0efe9;
+      --grey: #c4c0b5;
+      --grey-dark: #777;
+      --line: rgba(0,0,0,.08);
+      --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── UTILITY ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--grey-dark);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .accent { color: var(--yellow-dark); }
+
+    /* ── GRID OVERLAY (decorative) ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background:
+        repeating-linear-gradient(90deg, transparent, transparent calc(25% - 1px), rgba(245,197,24,.07) calc(25% - 1px), rgba(245,197,24,.07) 25%),
+        repeating-linear-gradient(0deg, transparent, transparent calc(25% - 1px), rgba(245,197,24,.07) calc(25% - 1px), rgba(245,197,24,.07) 25%);
+      opacity: .5;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(250,249,245,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow .3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+    .nav-logo span { color: var(--yellow-dark); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--grey-dark);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta {
+      background: var(--yellow) !important;
+      color: var(--black) !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      transition: background .2s, transform .2s !important;
+    }
+    .nav-cta:hover { background: var(--yellow-dark) !important; transform: translateY(-1px); }
+
+    /* Mobile menu */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      position: relative;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--black);
+      position: absolute;
+      left: 5px;
+      transition: .3s;
+    }
+    .hamburger span:nth-child(1) { top: 8px; }
+    .hamburger span:nth-child(2) { top: 15px; }
+    .hamburger span:nth-child(3) { top: 22px; }
+    .hamburger.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(250,249,245,.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        transform: translateY(-120%);
+        transition: transform .35s ease;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { transform: translateY(0); }
+      .nav-links a { font-size: 16px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 100px 0 60px;
+      overflow: hidden;
+    }
+    .hero-bg-stroke {
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 45%;
+      height: 120%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 900'%3E%3Cpath d='M200 0 Q250 150 180 300 Q120 450 250 600 Q350 750 200 900' stroke='%23e0e0e0' stroke-width='80' fill='none' opacity='.15'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      opacity: .5;
+    }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text { max-width: 560px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--black);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--yellow-dark);
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-meta-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--yellow);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .hero-meta-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--grey-dark);
+    }
+    .hero-meta-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+    }
+    .hero-cta .arrow-icon { font-size: 20px; }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image { order: -1; }
+      .hero-meta { flex-wrap: wrap; gap: 20px; }
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-img-wrapper {
+      position: relative;
+    }
+    .about-img-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: 120px;
+      height: 120px;
+      background: var(--yellow);
+      border-radius: 8px;
+      z-index: 0;
+    }
+    .about-img-wrapper img {
+      position: relative;
+      z-index: 1;
+      border-radius: 12px;
+      width: 100%;
+      box-shadow: 0 16px 48px rgba(0,0,0,.06);
+    }
+    .about-text h2 { margin-bottom: 16px; }
+    .about-text p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: var(--off-white);
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+    .about-feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+    }
+    .about-feature h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .about-feature p {
+      font-size: 12px !important;
+      color: var(--grey-dark) !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-features { grid-template-columns: 1fr; }
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+    .highlights-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .highlight-card {
+      padding: 36px 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--yellow);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+    .highlight-card:hover::before { transform: scaleX(1); }
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.06);
+    }
+    .highlight-icon {
+      width: 56px; height: 56px;
+      background: var(--yellow);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin: 0 auto 18px;
+    }
+    .highlight-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .highlight-card p {
+      font-size: 14px;
+      color: var(--grey-dark);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .highlights-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SPEAKERS ── */
+    .speakers {
+      padding: 100px 0;
+      background: var(--black);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .speakers::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40%;
+      height: 100%;
+      background: radial-gradient(ellipse at top right, rgba(245,197,24,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .speakers-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      position: relative;
+      z-index: 1;
+    }
+    .speakers-header .section-label { color: var(--yellow); }
+    .speakers-header .section-title { color: var(--white); }
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .speaker-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform .25s, background .25s;
+    }
+    .speaker-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.08);
+    }
+    .speaker-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 4px solid var(--yellow);
+      margin-bottom: 24px;
+      filter: grayscale(100%);
+      transition: filter .4s;
+    }
+    .speaker-card:hover .speaker-img { filter: grayscale(0); }
+    .speaker-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .speaker-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .speaker-role {
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 16px;
+    }
+    .speaker-topic {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--yellow);
+      font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .speakers-grid { grid-template-columns: 1fr; }
+      .speaker-card { padding: 28px; }
+    }
+
+    /* ── PASSES ── */
+    .passes {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .passes-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .passes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+    .pass-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 40px 32px 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
+      overflow: hidden;
+    }
+    .pass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.1);
+    }
+
+    /* Silver */
+    .pass-silver {
+      background: linear-gradient(160deg, #f8f8f8 0%, #e8e8e8 100%);
+      border: 1px solid #ddd;
+    }
+    .pass-silver .pass-tier-icon { background: linear-gradient(135deg, #c0c0c0, #a8a8a8); }
+
+    /* Gold */
+    .pass-gold {
+      background: linear-gradient(160deg, #fff9e6 0%, #fff0c0 100%);
+      border: 2px solid var(--yellow);
+      transform: scale(1.03);
+    }
+    .pass-gold:hover { transform: scale(1.03) translateY(-6px); }
+    .pass-gold .pass-tier-icon { background: linear-gradient(135deg, var(--yellow), #d4a000); }
+    .pass-popular {
+      position: absolute;
+      top: 16px;
+      right: -28px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 40px;
+      transform: rotate(45deg);
+    }
+
+    /* Diamond */
+    .pass-diamond {
+      background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: var(--white);
+      border: 1px solid #333;
+    }
+    .pass-diamond .pass-tier-icon { background: linear-gradient(135deg, #b9f2ff, #7dd3e8); }
+    .pass-diamond .pass-features li { color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.08); }
+    .pass-diamond .pass-features li::before { color: var(--yellow); }
+
+    .pass-tier-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+    }
+    .pass-tier-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .pass-tagline {
+      font-size: 13px;
+      color: var(--grey-dark);
+      margin-bottom: 24px;
+    }
+    .pass-diamond .pass-tagline { color: rgba(255,255,255,.5); }
+    .pass-features {
+      list-style: none;
+      margin: 0 0 28px;
+      flex-grow: 1;
+    }
+    .pass-features li {
+      padding: 10px 0;
+      font-size: 14px;
+      color: #555;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pass-features li:last-child { border-bottom: none; }
+    .pass-features li::before {
+      content: '✓';
+      font-weight: 800;
+      color: var(--yellow-dark);
+      font-size: 14px;
+    }
+    .pass-btn {
+      display: block;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .pass-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
+    .pass-silver .pass-btn {
+      background: var(--black);
+      color: var(--white);
+    }
+    .pass-gold .pass-btn {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    .pass-diamond .pass-btn {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    @media (max-width: 900px) {
+      .passes-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .pass-gold { transform: none; }
+      .pass-gold:hover { transform: translateY(-6px); }
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown-section {
+      padding: 80px 0;
+      background: var(--yellow);
+      text-align: center;
+    }
+    .countdown-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 40px);
+      font-weight: 900;
+      margin-bottom: 32px;
+      color: var(--black);
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 20px 24px;
+      min-width: 90px;
+    }
+    .countdown-number {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+      font-family: var(--font-body);
+    }
+    .countdown-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-top: 4px;
+      color: var(--yellow);
+    }
+
+    /* ── REGISTRATION LINKS (original) ── */
+    .registrations {
+      padding: 80px 0;
+      background: var(--off-white);
+    }
+    .registrations-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .reg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .reg-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 28px 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      text-align: center;
+      transition: transform .2s, border-color .2s;
+    }
+    .reg-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--yellow);
+    }
+    .reg-card-icon {
+      width: 48px; height: 48px;
+      background: var(--yellow);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+    .reg-card h3 { font-size: 16px; font-weight: 700; }
+    .reg-card p { font-size: 12px; color: var(--grey-dark); }
+    @media (max-width: 600px) {
+      .reg-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 60px 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .footer-brand span { color: var(--yellow); }
+    .footer-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.7;
+      max-width: 360px;
+    }
+    .footer h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      padding: 4px 0;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,.4);
+    }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-socials a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      transition: background .2s;
+    }
+    .footer-socials a:hover { background: var(--yellow); color: var(--black); }
+    @media (max-width: 768px) {
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header class="brand">
-      <img src="echo26-logo.png" alt="ECHO’26 logo">
-    </header>
-    <p class="eyebrow">Registration</p>
-    <nav class="choices" aria-label="Registration options">
-      <a class="choice" href="https://forms.gle/ADTbMmdHBXdkSpMx5" target="_blank" rel="noopener noreferrer">
-        <span>✨ Talent Hunt</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="choice" href="https://docs.google.com/forms/d/e/1FAIpQLSfaMkYVTY55KrK5Eb9RZBMf_6GM-ahRuDIv7FAW858ssdZ7gQ/viewform" target="_blank" rel="noopener noreferrer">
-        <span>✨ Art Exhibition</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="choice" href="https://docs.google.com/forms/d/e/1FAIpQLSftqwMldS4hRZH1ecCEOeud2d3DbgO_2q--7MThmqliK1z2_A/viewform" target="_blank" rel="noopener noreferrer">
-        <span>✨ Stall Registration</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </nav>
-    <footer>
-      <a class="social" href="https://instagram.com/_echo_2026" target="_blank" rel="noopener noreferrer" aria-label="Follow ECHO 2026 on Instagram">◎ Follow @_echo_2026</a>
-      <section class="contacts" aria-label="Contact details">
-        <p class="contact-title">For enquiries, contact</p>
-        <a class="contact" href="tel:+918287682995"><strong>Sakshi Bazzad</strong><span>+91 82876 82995</span></a>
-        <a class="contact" href="tel:+916239547384"><strong>Tanya Narula</strong><span>+91 62395 47384</span></a>
-      </section>
-    </footer>
-  </main>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ECHO<span>'26</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#passes">Passes</a>
+        <a href="#register">Register</a>
+        <a href="#passes" class="nav-cta">Get Pass →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-stroke"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text fade-up">
+          <div class="hero-badge"><span class="dot"></span> International Artist Day</div>
+          <h1 class="hero-title">ECHO<span class="accent">'26</span></h1>
+          <p class="hero-subtitle">Echoes of Identity & Expression</p>
+          <p class="hero-desc">
+            A celebration of art and creativity at Sushant University. Bringing together artists, students, and creative minds to exchange ideas and explore new perspectives.
+          </p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <div class="hero-meta-icon">📅</div>
+              <div>
+                <div class="hero-meta-label">Date</div>
+                <div class="hero-meta-value">23rd October 2026</div>
+              </div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-icon">🏫</div>
+              <div>
+                <div class="hero-meta-label">Venue</div>
+                <div class="hero-meta-value">Sushant University, Gurugram</div>
+              </div>
+            </div>
+          </div>
+          <a href="#passes" class="hero-cta">Book Your Pass <span class="arrow-icon">→</span></a>
+        </div>
+        <div class="hero-image fade-up" style="transition-delay:.2s">
+          <img src="assets/echo26-logo.png" alt="ECHO'26 Logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrapper fade-up">
+          <img src="assets/main-poster.png" alt="ECHO'26 Main Poster">
+        </div>
+        <div class="about-text fade-up" style="transition-delay:.15s">
+          <span class="section-label">About the Event</span>
+          <h2 class="section-title">What is <span class="accent">ECHO'26</span>?</h2>
+          <p>
+            ECHO'26 is a grand celebration of art and creativity, organised by the School of Art & Architecture, BFA Program at Sushant University on <strong>23rd October</strong> — marking <strong>International Artist Day</strong>.
+          </p>
+          <p>
+            The event features a <strong>national-level art exhibition</strong>, artist-led talks, book launches, panel discussions, brand stalls, and a talent hunt. A special highlight is the <strong>keynote address and book launch</strong> by the President and CEO of the Think and Grow Rich Institute, Canada.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🎨</div>
+              <div>
+                <h4>National Art Exhibition</h4>
+                <p>Showcasing creative talent from across India</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🎤</div>
+              <div>
+                <h4>Artist Talks</h4>
+                <p>Inspiring sessions by renowned artists</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">📚</div>
+              <div>
+                <h4>Book Launches</h4>
+                <p>New releases & author interactions</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🏪</div>
+              <div>
+                <h4>Brand Stalls</h4>
+                <p>Business & networking opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HIGHLIGHTS ── -->
+  <section class="highlights" id="highlights">
+    <div class="container">
+      <div class="highlights-header fade-up">
+        <span class="section-label">Event Highlights</span>
+        <h2 class="section-title">A Resonance of <span class="accent">Self Expression</span></h2>
+        <p style="color: var(--grey-dark);">An immersive day of art, ideas, and creative energy.</p>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">🖼️</div>
+          <h3>National-Level Art Exhibition</h3>
+          <p>A curated showcase of paintings, sculptures, installations, and mixed-media works from artists across the nation.</p>
+        </div>
+        <div class="highlight-card fade-up" style="transition-delay:.1s">
+          <div class="highlight-icon">💬</div>
+          <h3>Panel Discussions</h3>
+          <p>Thought-provoking conversations exploring identity, expression, and the evolving landscape of contemporary art.</p>
+        </div>
+        <div class="highlight-card fade-up" style="transition-delay:.2s">
+          <div class="highlight-icon">🏆</div>
+          <h3>Talent Hunt</h3>
+          <p>A platform for emerging artists and creative minds to showcase their talent and win recognition.</p>
+        </div>
+        <div class="highlight-card fade-up" style="transition-delay:.05s">
+          <div class="highlight-icon">📖</div>
+          <h3>Book Launches & Sessions</h3>
+          <p>Exclusive book launches accompanied by interactive sessions with authors and creative leaders.</p>
+        </div>
+        <div class="highlight-card fade-up" style="transition-delay:.15s">
+          <div class="highlight-icon">🎙️</div>
+          <h3>Artist-Led Talks</h3>
+          <p>Hear from practicing artists about their journeys, techniques, and perspectives on modern art.</p>
+        </div>
+        <div class="highlight-card fade-up" style="transition-delay:.25s">
+          <div class="highlight-icon">🤝</div>
+          <h3>Brand Stalls & Networking</h3>
+          <p>Connect with brands, explore business opportunities, and build meaningful creative partnerships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPEAKERS ── -->
+  <section class="speakers" id="speakers">
+    <div class="container">
+      <div class="speakers-header fade-up">
+        <span class="section-label">Keynote Speakers</span>
+        <h2 class="section-title">Voices That <span class="accent">Inspire</span></h2>
+      </div>
+      <div class="speakers-grid">
+        <div class="speaker-card fade-up">
+          <img class="speaker-img" src="assets/speaker-satish.png" alt="Satish Verma">
+          <span class="speaker-badge">Keynote Speaker</span>
+          <h3 class="speaker-name">Satish Verma</h3>
+          <p class="speaker-role">President & CEO, Think and Grow Rich Institute, Canada</p>
+          <p class="speaker-topic">"LAW of Success"</p>
+        </div>
+        <div class="speaker-card fade-up" style="transition-delay:.15s">
+          <img class="speaker-img" src="assets/speaker-swwapnil.png" alt="Swwapnil Kalynkar">
+          <span class="speaker-badge">Featured Speaker</span>
+          <h3 class="speaker-name">Swwapnil Kalynkar</h3>
+          <p class="speaker-role">Founder & CEO, LifeMaster International</p>
+          <p class="speaker-topic">"Mastering Creative Leadership"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ── -->
+  <section class="countdown-section">
+    <div class="container">
+      <h2 class="countdown-title">Event Starts In</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="cd-days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="cd-hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="cd-mins">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="cd-secs">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PASSES ── -->
+  <section class="passes" id="passes">
+    <div class="container">
+      <div class="passes-header fade-up">
+        <span class="section-label">Get Your Pass</span>
+        <h2 class="section-title">Choose Your <span class="accent">Experience</span></h2>
+        <p style="color: var(--grey-dark);">Select the pass that suits your creative journey at ECHO'26.</p>
+      </div>
+      <div class="passes-grid">
+        <!-- Silver -->
+        <div class="pass-card pass-silver fade-up">
+          <div class="pass-tier-icon">🥈</div>
+          <h3 class="pass-tier-name">Silver Pass</h3>
+          <p class="pass-tagline">Essential access to ECHO'26</p>
+          <ul class="pass-features">
+            <li>Entry to Art Exhibition</li>
+            <li>Access to Panel Discussions</li>
+            <li>Brand Stalls Access</li>
+            <li>Event Kit & ID Badge</li>
+          </ul>
+          <a class="pass-btn" href="https://nas.com/portal/events/manage?id=6ad111db949d491df686c16b" target="_blank" rel="noopener noreferrer">Book Silver Pass →</a>
+        </div>
+        <!-- Gold -->
+        <div class="pass-card pass-gold fade-up" style="transition-delay:.1s">
+          <div class="pass-popular">POPULAR</div>
+          <div class="pass-tier-icon">🥇</div>
+          <h3 class="pass-tier-name">Gold Pass</h3>
+          <p class="pass-tagline">Enhanced experience with priority access</p>
+          <ul class="pass-features">
+            <li>All Silver Benefits</li>
+            <li>Priority Seating at Talks</li>
+            <li>Keynote Session Access</li>
+            <li>Book Launch Access</li>
+            <li>Networking Lounge</li>
+          </ul>
+          <a class="pass-btn" href="https://nas.com/portal/events/manage?id=6ad11f421ff2c1edf8691796&activeCommunityId=691a1746c0087e21650c1378&tab=registration" target="_blank" rel="noopener noreferrer">Book Gold Pass →</a>
+        </div>
+        <!-- Diamond -->
+        <div class="pass-card pass-diamond fade-up" style="transition-delay:.2s">
+          <div class="pass-tier-icon">💎</div>
+          <h3 class="pass-tier-name">Diamond Pass</h3>
+          <p class="pass-tagline">The ultimate ECHO'26 experience</p>
+          <ul class="pass-features">
+            <li>All Gold Benefits</li>
+            <li>Exclusive Meet & Greet with Speakers</li>
+            <li>VIP Seating at All Sessions</li>
+            <li>Signed Book Copy</li>
+            <li>Premium Event Merchandise</li>
+            <li>Certificate of Participation</li>
+          </ul>
+          <a class="pass-btn" href="https://nas.com/portal/events/manage?id=6ad3ca38f8119dd5fb39f4b4&activeCommunityId=691a1746c0087e21650c1378&tab=registration" target="_blank" rel="noopener noreferrer">Book Diamond Pass →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REGISTRATIONS (Original forms) ── -->
+  <section class="registrations" id="register">
+    <div class="container">
+      <div class="registrations-header fade-up">
+        <span class="section-label">Participate</span>
+        <h2 class="section-title">Register for <span class="accent">Activities</span></h2>
+        <p style="color: var(--grey-dark);">Want to exhibit, perform, or set up a stall? Register below.</p>
+      </div>
+      <div class="reg-grid">
+        <a class="reg-card fade-up" href="https://forms.gle/ADTbMmdHBXdkSpMx5" target="_blank" rel="noopener noreferrer">
+          <div class="reg-card-icon">✨</div>
+          <h3>Talent Hunt</h3>
+          <p>Showcase your talent</p>
+        </a>
+        <a class="reg-card fade-up" href="https://docs.google.com/forms/d/e/1FAIpQLSfaMkYVTY55KrK5Eb9RZBMf_6GM-ahRuDIv7FAW858ssdZ7gQ/viewform" target="_blank" rel="noopener noreferrer" style="transition-delay:.1s">
+          <div class="reg-card-icon">🎨</div>
+          <h3>Art Exhibition</h3>
+          <p>Submit your artwork</p>
+        </a>
+        <a class="reg-card fade-up" href="https://docs.google.com/forms/d/e/1FAIpQLSftqwMldS4hRZH1ecCEOeud2d3DbgO_2q--7MThmqliK1z2_A/viewform" target="_blank" rel="noopener noreferrer" style="transition-delay:.2s">
+          <div class="reg-card-icon">🏪</div>
+          <h3>Stall Registration</h3>
+          <p>Set up your brand stall</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">ECHO<span>'26</span></div>
+          <p class="footer-desc">A celebration of art, creativity, and self-expression on International Artist Day. Organised by the School of Art & Architecture, BFA Program at Sushant University.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#highlights">Highlights</a>
+            <a href="#speakers">Speakers</a>
+            <a href="#passes">Get Passes</a>
+            <a href="#register">Register</a>
+          </div>
+        </div>
+        <div>
+          <h4>Event Details</h4>
+          <div class="footer-links">
+            <a>📅 23rd October 2026</a>
+            <a>🕐 10:00 AM Onwards</a>
+            <a>📍 E-Block & Sushant's Ground</a>
+            <a>🏫 Sushant University, Gurugram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 ECHO'26 — Sushant University. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="https://instagram.com/_echo_2026" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CONTACTS FLOATING BAR ── -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--black);color:var(--white);padding:10px 20px;display:flex;justify-content:center;align-items:center;gap:24px;font-size:13px;z-index:999;border-top:2px solid var(--yellow);">
+    <span style="font-weight:700;">📞 Enquiries:</span>
+    <a href="tel:+918287682995" style="color:var(--yellow);font-weight:600;">Sakshi Bazzad — +91 82876 82995</a>
+    <a href="tel:+916239547384" style="color:var(--yellow);font-weight:600;">Tanya Narula — +91 62395 47384</a>
+  </div>
+
+  <script>
+    // ── NAV SCROLL ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── HAMBURGER ──
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ── COUNTDOWN ──
+    function updateCountdown() {
+      const target = new Date('2026-10-23T10:00:00+05:30').getTime();
+      const now = Date.now();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '🎉';
+        document.getElementById('cd-hours').textContent = '';
+        document.getElementById('cd-mins').textContent = '';
+        document.getElementById('cd-secs').textContent = '';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
